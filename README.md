@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Swell 1930s Rubber-Hose Birthday Card!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday, Mark! 🎂</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Tone.js for vintage ragtime synthesized audio -->
@@ -39,6 +39,12 @@
 
     .font-hand {
       font-family: 'Patrick Hand SC', cursive;
+    }
+
+    /* Mobile touch responsiveness and fast-tap optimization */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
     /* 1930s Film Projector Flicker and Scratches */
@@ -166,35 +172,30 @@
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col items-center justify-center p-3 sm:p-6 bg-stone-950">
+<body class="min-h-screen flex flex-col items-center justify-center p-2 sm:p-6 bg-stone-950">
 
-  <!-- Floating Audio & Interactivity Banner -->
-  <header class="w-full max-w-5xl flex items-center justify-between text-[#ece2c6] mb-3 px-2">
+  <!-- Streamlined Mobile-Friendly Top Bar -->
+  <header class="w-full max-w-5xl flex items-center justify-between text-[#ece2c6] mb-2 px-1 sm:px-2">
     <div class="flex items-center space-x-2">
-      <span class="inline-block w-3 h-3 rounded-full bg-amber-500 animate-ping"></span>
-      <h1 class="text-xs sm:text-sm tracking-widest uppercase font-mono font-bold text-amber-200">
-        FLEISCHER & IWERKS THEATRICAL SHORTS • 1934
-      </h1>
+      <span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+      <span class="text-xs sm:text-sm font-bold tracking-wider text-amber-200">
+        BIRTHDAY EDITION 🎂
+      </span>
     </div>
     
     <div class="flex items-center gap-2">
       <!-- Music & Sound Toggle Button -->
-      <button id="toggleAudioBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-900/60 hover:bg-amber-800 text-amber-200 text-xs font-bold transition border border-amber-700/50 shadow-sm">
-        <svg id="audioIcon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <button id="toggleAudioBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-900/90 hover:bg-emerald-800 text-emerald-200 text-xs font-bold transition border border-emerald-600/50 shadow-sm active:scale-95">
+        <svg id="audioIcon" class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"/>
         </svg>
-        <span id="audioStatusText">Start Ragtime Song! 🎵</span>
-      </button>
-
-      <!-- Edit Greeting Modal Button -->
-      <button id="customizeBtn" class="px-3 py-1.5 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-bold transition border border-stone-600 shadow-sm">
-        ✏️ Personalize Card
+        <span id="audioStatusText">Music: Playing 🎵</span>
       </button>
     </div>
   </header>
 
   <!-- Card Film Screen Frame -->
-  <main class="relative w-full max-w-5xl bg-[#ebdcc2] border-vintage rounded-2xl shadow-2xl overflow-hidden film-projector-filter" style="min-height: 580px;">
+  <main class="relative w-full max-w-5xl bg-[#ebdcc2] border-vintage rounded-2xl shadow-2xl overflow-hidden film-projector-filter" style="min-height: 520px;">
 
     <!-- Static Projector Grain Canvas -->
     <canvas id="grainCanvas" class="absolute inset-0 w-full h-full z-40 pointer-events-none"></canvas>
@@ -207,26 +208,23 @@
       <div class="w-[1px] h-full bg-white/70 absolute left-1/2 animate-[filmJitter_0.3s_infinite]"></div>
     </div>
 
-    <!-- Title Header Band in 1930s Comic Style -->
-    <div class="relative z-20 pt-4 pb-2 text-center border-b-4 border-dashed border-[#34271c] bg-[#e4d2b2]/90 select-none">
-      <div class="inline-block px-4 py-1 rounded bg-[#2c2117] text-[#f7efdc] font-vaudeville tracking-widest text-sm uppercase -rotate-1 shadow">
-        ★ SILLY SYMPHONY PRESENTS ★
-      </div>
-      <h2 id="cardTitleDisplay" class="text-3xl sm:text-5xl font-cartoon tracking-wider text-[#201811] mt-1.5 drop-shadow">
-        HAPPY BIRTHDAY, SWELL PAL!
+    <!-- Title Header Band Personalized for Mark -->
+    <div class="relative z-20 pt-3 pb-2 text-center border-b-4 border-dashed border-[#34271c] bg-[#e4d2b2]/90 select-none px-2">
+      <h2 id="cardTitleDisplay" class="text-2xl sm:text-4xl md:text-5xl font-cartoon tracking-wider text-[#201811] drop-shadow">
+        HAPPY BIRTHDAY, MARK!
       </h2>
       <p id="cardSubtitleDisplay" class="text-xs sm:text-base font-hand text-[#433224] tracking-wider mt-0.5">
-        "May your day be filled with heapin' helpings of swell fun!"
+        "Wishing you the swellest day packed with giggles, treats, and good company!"
       </p>
     </div>
 
     <!-- The Stage / Forest Animated Scene -->
-    <div id="sceneContainer" class="relative w-full h-[400px] sm:h-[470px] overflow-hidden cursor-crosshair">
+    <div id="sceneContainer" class="relative w-full h-[360px] sm:h-[470px] overflow-hidden cursor-crosshair">
       
       <!-- Interactive Click Instructions Tooltip -->
-      <div class="absolute top-2 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <span class="bg-[#241c14]/80 text-[#fbf5e6] text-[11px] sm:text-xs px-3 py-1 rounded-full border border-amber-900 shadow">
-          🌰 Click anywhere to toss treats to the hungry chubbies!
+      <div class="absolute top-2 left-1/2 -translate-x-1/2 z-20 pointer-events-none w-max max-w-[90%] text-center">
+        <span class="bg-[#241c14]/85 text-[#fbf5e6] text-[10px] sm:text-xs px-3 py-1 rounded-full border border-amber-900 shadow">
+          🌰 Tap anywhere to toss treats to the chubbies!
         </span>
       </div>
 
@@ -625,35 +623,35 @@
       </svg>
     </div>
 
-    <!-- Vintage Card Message & Interactive Control Deck -->
-    <div class="relative z-20 p-4 sm:p-5 bg-[#e4d3b5] border-t-4 border-[#2b2016]">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- Vintage Card Message & Mobile-Optimized Interactive Control Deck -->
+    <div class="relative z-20 p-3 sm:p-5 bg-[#e4d3b5] border-t-4 border-[#2b2016]">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
         
-        <!-- Left: Vintage Telegram Greeting Note -->
+        <!-- Left: Personable Telegram Greeting for Mark -->
         <div class="w-full md:w-2/3 bg-[#f6eee0] p-3 rounded-lg border-2 border-[#3d2f23] shadow-inner text-sm leading-relaxed">
-          <div class="flex items-center justify-between border-b border-[#cca677] pb-1 mb-2 font-mono text-xs text-[#6e5842]">
-            <span>WESTERN UNION CARTOON-O-GRAM</span>
-            <span id="currentDateStamp">OCT 06, 1934</span>
+          <div class="flex items-center justify-between border-b border-[#cca677] pb-1 mb-1.5 font-mono text-[11px] sm:text-xs text-[#6e5842]">
+            <span>BIRTHDAY TELEGRAM • SPECIAL DELIVERY</span>
+            <span id="currentDateStamp">OCT 07, 2026</span>
           </div>
           <p id="telegramMessage" class="text-[#2b2016] font-hand text-base sm:text-lg">
-            DEAR PAL: HOPING YOUR BIRTHDAY IS OVERFLOWING WITH SWELL GIGGLES, BIG HELPINGS OF CAKE, AND HAPPY ROUND CRITTERS! BEST WISHES FROM WG GUY & THE WHOLE WOODLAND GANG!
+            DEAR MARK: HOPING YOUR BIRTHDAY IS OVERFLOWING WITH HUGE GIGGLES, BIG HELPINGS OF CAKE, AND ENDLESS REASONS TO CELEBRATE! WE'RE SENDING YOU OUR WARMEST WISHES FOR AN INCREDIBLE YEAR AHEAD! BEST BIRTHDAY WISHES FROM WG GUY, ME, AND THE WHOLE CHONKY WOODLAND GANG!
           </p>
         </div>
 
-        <!-- Right: Action Buttons (Toss Treats, Sound, Confetti, Share) -->
+        <!-- Right: Touch-Optimized Action Buttons -->
         <div class="w-full md:w-1/3 flex flex-col gap-2">
           <!-- Toss Food Button -->
-          <button id="tossTreatsBtn" class="w-full py-2.5 px-4 rounded-xl bg-[#2e2319] hover:bg-[#433427] text-[#faedd8] font-cartoon text-sm tracking-wider uppercase shadow-md active:scale-95 transition flex items-center justify-center gap-2">
+          <button id="tossTreatsBtn" class="w-full py-3 px-4 rounded-xl bg-[#2e2319] hover:bg-[#433427] text-[#faedd8] font-cartoon text-xs sm:text-sm tracking-wider uppercase shadow-md active:scale-95 transition flex items-center justify-center gap-2">
             <span>🥜 Toss Treats to Critters!</span>
           </button>
 
           <div class="grid grid-cols-2 gap-2">
             <!-- Confetti Blast -->
-            <button id="confettiBtn" class="py-2 px-3 rounded-lg bg-[#b48858] hover:bg-[#9f7447] text-stone-950 font-bold text-xs uppercase shadow transition active:scale-95">
+            <button id="confettiBtn" class="py-2.5 px-3 rounded-lg bg-[#b48858] hover:bg-[#9f7447] text-stone-950 font-bold text-xs uppercase shadow transition active:scale-95 text-center">
               🎉 Party Pop!
             </button>
             <!-- Copy Greeting Link / Wish -->
-            <button id="copyWishBtn" class="py-2 px-3 rounded-lg bg-[#60705a] hover:bg-[#505f4b] text-stone-100 font-bold text-xs uppercase shadow transition active:scale-95">
+            <button id="copyWishBtn" class="py-2.5 px-3 rounded-lg bg-[#60705a] hover:bg-[#505f4b] text-stone-100 font-bold text-xs uppercase shadow transition active:scale-95 text-center">
               📋 Copy Wish
             </button>
           </div>
@@ -662,9 +660,9 @@
       </div>
 
       <!-- Feed Count Ticker -->
-      <div class="mt-3 flex items-center justify-between text-xs text-[#523f2f] border-t border-[#d8c39e] pt-2">
+      <div class="mt-2.5 flex items-center justify-between text-xs text-[#523f2f] border-t border-[#d8c39e] pt-2">
         <span id="treatCountText">Total Snacks Fed: <strong>0</strong> acorns & cookies</span>
-        <span>Animated with 1930s Squash & Stretch</span>
+        <span class="font-bold text-amber-900">🎂 Celebrating Mark's Big Day!</span>
       </div>
     </div>
 
@@ -674,42 +672,14 @@
     </div>
   </main>
 
-  <!-- Personalize Modal Drawer -->
-  <div id="customizeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 hidden">
-    <div class="bg-[#ebdcc2] border-vintage w-full max-w-md p-6 rounded-2xl shadow-2xl text-[#221a13] relative">
-      <h3 class="font-cartoon text-2xl text-center mb-1">EDIT BIRTHDAY CARD</h3>
-      <p class="text-xs text-center font-hand text-stone-700 mb-4">Customize the marquee headline and telegram message for the lucky birthday star!</p>
-
-      <div class="space-y-3 font-sans text-sm">
-        <div>
-          <label class="block text-xs font-bold uppercase mb-1">Headline Greeting:</label>
-          <input id="inputTitle" type="text" value="HAPPY BIRTHDAY, SWELL PAL!" class="w-full px-3 py-2 rounded-lg bg-[#f9f4ea] border-2 border-[#33261a] text-[#221a13] font-cartoon text-sm focus:outline-none focus:ring-2 focus:ring-amber-800">
-        </div>
-        <div>
-          <label class="block text-xs font-bold uppercase mb-1">Subtitle:</label>
-          <input id="inputSubtitle" type="text" value="May your day be filled with heapin' helpings of swell fun!" class="w-full px-3 py-2 rounded-lg bg-[#f9f4ea] border-2 border-[#33261a] text-[#221a13] font-hand text-sm focus:outline-none">
-        </div>
-        <div>
-          <label class="block text-xs font-bold uppercase mb-1">Telegram Body Message:</label>
-          <textarea id="inputMessage" rows="3" class="w-full px-3 py-2 rounded-lg bg-[#f9f4ea] border-2 border-[#33261a] text-[#221a13] font-hand text-base focus:outline-none">DEAR PAL: HOPING YOUR BIRTHDAY IS OVERFLOWING WITH SWELL GIGGLES, BIG HELPINGS OF CAKE, AND HAPPY ROUND CRITTERS! BEST WISHES FROM WG GUY & THE WHOLE WOODLAND GANG!</textarea>
-        </div>
-      </div>
-
-      <div class="flex justify-end gap-2 mt-5">
-        <button id="cancelModalBtn" class="px-4 py-1.5 rounded-lg border-2 border-stone-800 text-xs font-bold">Cancel</button>
-        <button id="saveModalBtn" class="px-5 py-1.5 rounded-lg bg-[#2c2016] text-[#faeed9] font-bold text-xs">Update Card ★</button>
-      </div>
-    </div>
-  </div>
-
   <script>
     // State
     let treatsFed = 0;
     let isPlayingMusic = false;
     let synth = null;
     let bassSynth = null;
-    let noiseNode = null;
-    let melodyLoop = null;
+    let melodyPart = null;
+    let bassPart = null;
 
     // Canvas Film Grain Generator
     const grainCanvas = document.getElementById('grainCanvas');
@@ -730,7 +700,6 @@
       const imgData = ctx.createImageData(w, h);
       const buffer = new Uint32Array(imgData.data.buffer);
       for (let i = 0; i < buffer.length; i++) {
-        // Random sepia-gray grain specs
         if (Math.random() < 0.12) {
           const val = Math.random() < 0.5 ? 40 : 220;
           buffer[i] = (255 << 24) | (val << 16) | (val << 8) | val;
@@ -743,7 +712,7 @@
 
     // 1930s Ragtime "Happy Birthday" Synthesizer using Tone.js
     async function setupRagtimeAudio() {
-      await Tone.start();
+      if (synth) return;
 
       // Vintage Honky-Tonk / Tin-Pan Piano Style PolySynth
       synth = new Tone.PolySynth(Tone.Synth, {
@@ -761,8 +730,6 @@
       }).toDestination();
       bassSynth.volume.value = -4;
 
-      // Vintage Ragtime variation of "Happy Birthday" with bounce
-      // Melody: C4, C4, D4, C4, F4, E4 | C4, C4, D4, C4, G4, F4 ...
       const ragtimeMelody = [
         { time: "0:0", note: "C4", dur: "8n." },
         { time: "0:0:3", note: "C4", dur: "16n" },
@@ -794,7 +761,6 @@
         { time: "5:2", note: "F4", dur: "2n" }
       ];
 
-      // Oom-pah Bass Line
       const bassLine = [
         { time: "0:0", note: "F2" }, { time: "0:2", note: "C3" },
         { time: "1:0", note: "F2" }, { time: "1:2", note: "C3" },
@@ -804,11 +770,11 @@
         { time: "5:0", note: "C3" }, { time: "5:2", note: "F2" }
       ];
 
-      const melodyPart = new Tone.Part((time, value) => {
+      melodyPart = new Tone.Part((time, value) => {
         synth.triggerAttackRelease(value.note, value.dur, time);
       }, ragtimeMelody);
 
-      const bassPart = new Tone.Part((time, value) => {
+      bassPart = new Tone.Part((time, value) => {
         bassSynth.triggerAttackRelease(value.note, "8n", time);
       }, bassLine);
 
@@ -822,53 +788,85 @@
       bassPart.start(0);
     }
 
-    // Toggle Audio Handler
     const toggleAudioBtn = document.getElementById('toggleAudioBtn');
     const audioStatusText = document.getElementById('audioStatusText');
 
-    toggleAudioBtn.addEventListener('click', async () => {
-      if (!isPlayingMusic) {
-        try {
-          if (!synth) {
-            await setupRagtimeAudio();
-          }
-          Tone.Transport.start();
-          isPlayingMusic = true;
-          audioStatusText.textContent = "Music Playing 🎺 (Mute)";
-          toggleAudioBtn.classList.replace('bg-amber-900/60', 'bg-emerald-900/80');
-          showToast("🎵 Playing 1930s Ragtime Birthday Melody!");
-        } catch (e) {
-          console.error(e);
-        }
+    function updateAudioButtonUI(playing) {
+      isPlayingMusic = playing;
+      if (playing) {
+        audioStatusText.textContent = "Music: Playing 🎵";
+        toggleAudioBtn.classList.remove('bg-stone-800', 'text-stone-300', 'border-stone-600');
+        toggleAudioBtn.classList.add('bg-emerald-900/90', 'text-emerald-200', 'border-emerald-600/50');
       } else {
-        Tone.Transport.stop();
-        isPlayingMusic = false;
-        audioStatusText.textContent = "Play Ragtime 🎵";
-        toggleAudioBtn.classList.replace('bg-emerald-900/80', 'bg-amber-900/60');
+        audioStatusText.textContent = "Music: Muted 🔇";
+        toggleAudioBtn.classList.remove('bg-emerald-900/90', 'text-emerald-200', 'border-emerald-600/50');
+        toggleAudioBtn.classList.add('bg-stone-800', 'text-stone-300', 'border-stone-600');
+      }
+    }
+
+    async function startMusic() {
+      try {
+        await setupRagtimeAudio();
+        await Tone.start();
+        Tone.Transport.start();
+        updateAudioButtonUI(true);
+      } catch (err) {
+        // Autoplay may be deferred until first user interaction on strict mobile browsers
+      }
+    }
+
+    function stopMusic() {
+      Tone.Transport.stop();
+      updateAudioButtonUI(false);
+    }
+
+    // Toggle Audio Handler
+    toggleAudioBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      if (!isPlayingMusic) {
+        await startMusic();
+        showToast("🎵 Playing Birthday Ragtime!");
+      } else {
+        stopMusic();
+        showToast("🔇 Music paused");
       }
     });
 
+    // Automatic playback trigger on load, with mobile first-gesture fallback
+    window.addEventListener('load', () => {
+      startMusic();
+    });
+
+    // First user gesture listener unlocks audio instantly on iOS/Android if initially restricted
+    const unlockOnFirstTouch = async () => {
+      if (!isPlayingMusic) {
+        await startMusic();
+      }
+      window.removeEventListener('pointerdown', unlockOnFirstTouch);
+      window.removeEventListener('touchstart', unlockOnFirstTouch);
+      window.removeEventListener('click', unlockOnFirstTouch);
+    };
+    window.addEventListener('pointerdown', unlockOnFirstTouch, { passive: true });
+    window.addEventListener('touchstart', unlockOnFirstTouch, { passive: true });
+    window.addEventListener('click', unlockOnFirstTouch, { passive: true });
+
     // Cartoon SFX for eating & bouncing
     function playCartoonBoing() {
-      if (!window.AudioContext && !window.webkitAudioContext) return;
       try {
         const audioCtx = Tone.context.rawContext || new (window.AudioContext || window.webkitAudioContext)();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.type = 'sine';
-        // Pitch upward sweep (Boing / Pop)
         const now = audioCtx.currentTime;
         osc.frequency.setValueAtTime(180, now);
         osc.frequency.exponentialRampToValueAtTime(540, now + 0.15);
-        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.setValueAtTime(0.25, now);
         gain.gain.linearRampToValueAtTime(0.01, now + 0.2);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
         osc.start(now);
         osc.stop(now + 0.2);
-      } catch (err) {
-        // Audio context may require click
-      }
+      } catch (err) {}
     }
 
     // Dropping Treats on Canvas / SVG
@@ -878,11 +876,9 @@
 
     function throwFood(clientX, clientY) {
       const rect = sceneContainer.getBoundingClientRect();
-      // Map click coordinate into SVG 1000x600 coordinate system
       const svgX = ((clientX - rect.left) / rect.width) * 1000;
       const svgY = ((clientY - rect.top) / rect.height) * 600;
 
-      // Create animated SVG peanut/cookie
       const foodItem = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       foodItem.setAttribute('transform', `translate(${svgX}, ${svgY})`);
 
@@ -904,14 +900,11 @@
 
       droppedFoodGroup.appendChild(foodItem);
       playCartoonBoing();
-
-      // Trigger rubbery stretch on the closest critter
       triggerCritterChomp(svgX);
 
       treatsFed++;
       treatCountText.innerHTML = `Total Snacks Fed: <strong>${treatsFed}</strong> acorns & cookies`;
 
-      // Animate food fade & eat
       setTimeout(() => {
         foodItem.style.transition = 'transform 0.4s ease-out, opacity 0.4s';
         foodItem.style.transform = `translate(${svgX}, ${Math.min(svgY + 40, 520)}) scale(0.6)`;
@@ -922,7 +915,6 @@
       }, 700);
     }
 
-    // Determine nearest critter and give them an exaggerated squish
     function triggerCritterChomp(x) {
       let critterId = 'critterBunny';
       if (x < 240) critterId = 'critterDeer';
@@ -940,8 +932,8 @@
       }
     }
 
-    // Scene click listener
-    sceneContainer.addEventListener('click', (e) => {
+    // Touch & Click listener for mobile feeding
+    sceneContainer.addEventListener('pointerdown', (e) => {
       throwFood(e.clientX, e.clientY);
     });
 
@@ -954,12 +946,12 @@
       showToast("Fed a round friend!");
     });
 
-    // Vintage Sepia Confetti Burst
+    // Confetti Burst
     const confettiBtn = document.getElementById('confettiBtn');
     confettiBtn.addEventListener('click', () => {
       createVintageConfetti();
       playCartoonBoing();
-      showToast("🎉 Happy Birthday Hurrah!");
+      showToast("🎉 Happy Birthday Mark!");
     });
 
     function createVintageConfetti() {
@@ -989,14 +981,13 @@
       }
     }
 
-    // Copy Birthday Wish to Clipboard
+    // Copy Birthday Wish to Clipboard for Mark
     const copyWishBtn = document.getElementById('copyWishBtn');
     copyWishBtn.addEventListener('click', () => {
       const title = document.getElementById('cardTitleDisplay').innerText;
       const msg = document.getElementById('telegramMessage').innerText;
-      const textToCopy = `🎂 ${title} 🎂\n\n"${msg}"\n\n— Sent from the 1930s Rubber-Hose Animated Forest!`;
+      const textToCopy = `🎂 ${title} 🎂\n\n"${msg}"\n\n— Sent with love from Wg Guy & the whole woodland gang!`;
 
-      // Copy using textarea fallback as specified in instructions
       const tempInput = document.createElement('textarea');
       tempInput.value = textToCopy;
       document.body.appendChild(tempInput);
@@ -1004,7 +995,7 @@
       document.execCommand('copy');
       document.body.removeChild(tempInput);
 
-      showToast("📋 Copied Birthday Wish to Clipboard!");
+      showToast("📋 Copied Mark's Birthday Wish!");
     });
 
     // Toast notification helper
@@ -1019,36 +1010,8 @@
       toastTimeout = setTimeout(() => {
         toast.classList.remove('opacity-100');
         toast.classList.add('opacity-0');
-      }, 2400);
+      }, 2200);
     }
-
-    // Personalize Modal Dialog Logic
-    const customizeBtn = document.getElementById('customizeBtn');
-    const customizeModal = document.getElementById('customizeModal');
-    const cancelModalBtn = document.getElementById('cancelModalBtn');
-    const saveModalBtn = document.getElementById('saveModalBtn');
-
-    customizeBtn.addEventListener('click', () => {
-      customizeModal.classList.remove('hidden');
-    });
-
-    cancelModalBtn.addEventListener('click', () => {
-      customizeModal.classList.add('hidden');
-    });
-
-    saveModalBtn.addEventListener('click', () => {
-      const newTitle = document.getElementById('inputTitle').value.trim();
-      const newSubtitle = document.getElementById('inputSubtitle').value.trim();
-      const newMessage = document.getElementById('inputMessage').value.trim();
-
-      if (newTitle) document.getElementById('cardTitleDisplay').innerText = newTitle;
-      if (newSubtitle) document.getElementById('cardSubtitleDisplay').innerText = `"${newSubtitle}"`;
-      if (newMessage) document.getElementById('telegramMessage').innerText = newMessage.toUpperCase();
-
-      customizeModal.classList.add('hidden');
-      createVintageConfetti();
-      showToast("★ Birthday Card Updated! ★");
-    });
   </script>
 </body>
 </html>
